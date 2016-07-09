@@ -25,8 +25,13 @@ class PokemonList extends React.Component {
         </div>
       )
     }
+
+    var divStyle = {
+      maxWidth: '600px',
+      margin: '0 auto'
+    }
     return (
-      <div>
+      <div style={divStyle}>
         {pokemon}
       </div>
     );
