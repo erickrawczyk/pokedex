@@ -1,24 +1,37 @@
 import React from 'react';
+import {Card, CardHeader} from 'material-ui/Card';
+import {request} from './http';
 
 class Pokemon extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {likesCount : 0};
-    this.onLike = this.onLike.bind(this);
+    this.state = {
+      avatar : '',
+      name: '',
+      types: []
+    };
   }
 
-  onLike () {
-    let newLikesCount = this.state.likesCount + 1;
-    this.setState({likesCount: newLikesCount});
+  componentDidMount() {
+    this.serverRequest = request(`http://pokeapi.co/api/v2/pokemon/1`, function (result) {
+      this.setState({
+        avatar: result.sprites.front_default,
+        name: result.name,
+        types: result.types.map((t) => t.type.name)
+      });
+    }.bind(this));
   }
 
   render() {
     return (
-      <div>
-        Likes : <span>{this.state.likesCount}</span>
-        <div><button onClick={this.onLike}>Like Me</button></div>
-      </div>
+      <Card>
+        <CardHeader
+          title={this.state.name}
+          subtitle={this.state.types.join(' | ')}
+          avatar={this.state.avatar}
+        />
+      </Card>
     );
   }
 

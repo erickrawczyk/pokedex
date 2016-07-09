@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack -d --watch",
-    "build" : "webpack -p"
+    "build": "webpack -p"
   },
   "author": "Eric Krawczyk",
   "license": "ISC",
@@ -14,8 +14,10 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
+    "material-ui": "~0.15.1",
+    "react": "~15.1.0",
+    "react-dom": "~15.1.0",
+    "react-tap-event-plugin": "^1.0.0",
     "webpack": "^1.13.1"
   }
 }
