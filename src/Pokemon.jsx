@@ -14,7 +14,7 @@ class Pokemon extends React.Component {
   }
 
   componentDidMount() {
-    this.serverRequest = request(`http://pokeapi.co/api/v2/pokemon/1`, function (result) {
+    this.serverRequest = request(`http://pokeapi.co/api/v2/pokemon/${this.props.pokeID}`, function (result) {
       this.setState({
         avatar: result.sprites.front_default,
         name: result.name,

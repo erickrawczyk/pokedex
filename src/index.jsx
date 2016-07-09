@@ -10,7 +10,7 @@ class App extends React.Component {
   render () {
     return (
       <MuiThemeProvider>
-        <Pokemon />
+        <Pokemon pokeID={27}/>
       </MuiThemeProvider>
     );
   }
