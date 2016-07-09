@@ -20,7 +20,7 @@ class Pokemon extends React.Component {
       this.setState({
         avatar: result.sprites.front_default,
         name: capitalize(result.name),
-        types: result.types.map((t) => capitalize(t.type.name))
+        types: result.types.reverse().map((t) => capitalize(t.type.name))
       });
     }.bind(this));
   }
