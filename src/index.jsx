@@ -4,13 +4,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {render} from 'react-dom';
 
 // components
-import Pokemon from './Pokemon.jsx';
+import PokemonList from './PokemonList.jsx';
 
 class App extends React.Component {
   render () {
     return (
       <MuiThemeProvider>
-        <Pokemon pokeID={27}/>
+        <PokemonList />
       </MuiThemeProvider>
     );
   }
