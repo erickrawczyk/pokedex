@@ -4,7 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {render} from 'react-dom';
 
 // components
-import PokemonList from './PokemonList.jsx';
+import PokemonList from './components/PokemonList.jsx';
 
 class App extends React.Component {
   render () {

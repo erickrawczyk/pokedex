@@ -1,6 +1,8 @@
 import React from 'react';
 import {Card, CardHeader} from 'material-ui/Card';
-import {request} from './http';
+
+import {request} from '../lib/http';
+import {capitalize} from '../lib/capitalize';
 
 class Pokemon extends React.Component {
 
@@ -17,8 +19,8 @@ class Pokemon extends React.Component {
     this.serverRequest = request(`http://pokeapi.co/api/v2/pokemon/${this.props.pokeID}/`, function (result) {
       this.setState({
         avatar: result.sprites.front_default,
-        name: result.name,
-        types: result.types.map((t) => t.type.name)
+        name: capitalize(result.name),
+        types: result.types.map((t) => capitalize(t.type.name))
       });
     }.bind(this));
   }
